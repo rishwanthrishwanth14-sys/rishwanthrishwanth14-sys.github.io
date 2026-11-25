@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rishwanth N – Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Rishwanth N, a full-stack developer working with React, Node.js, Express, MySQL and MongoDB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6fa;--surface:#fff;--ink:#12203a;--muted:#55627a;--line:#d9dfea;--accent:#2849d6;--accent-ink:#fff;--tag:#e8edfb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1626;--surface:#16213a;--ink:#e9eefb;--muted:#9aa8c4;--line:#27344f;--accent:#7f9bff;--accent-ink:#0e1626;--tag:#1d2a49;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1626;--surface:#16213a;--ink:#e9eefb;--muted:#9aa8c4;--line:#27344f;--accent:#7f9bff;--accent-ink:#0e1626;--tag:#1d2a49;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:800 20px "Bricolage Grotesque",sans-serif;text-decoration:none}
+nav{display:flex;gap:22px;font-size:15px}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+section{padding:84px 0 0}
+h2{font-size:clamp(28px,4vw,38px);margin-bottom:28px}
+.hero{padding-top:72px}
+.hero h1{font-size:clamp(46px,9vw,92px);font-weight:800;max-width:11ch}
+.role{font:500 clamp(18px,2.6vw,24px)/1.4 "Bricolage Grotesque",sans-serif;color:var(--accent);margin:18px 0 20px}
+.lede{max-width:56ch;color:var(--muted);font-size:18px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-1px)}
+.flow{margin-top:56px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+.flow p{margin:0 0 14px;font-size:14px;color:var(--muted)}
+.flow ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 0;align-items:center}
+.flow li{font:700 15px "Bricolage Grotesque",sans-serif;padding:8px 14px;border:1.5px solid var(--ink);border-radius:8px;background:var(--bg)}
+.flow li small{display:block;font:400 12px "IBM Plex Sans",sans-serif;color:var(--muted)}
+.flow li+li::before{content:"";position:absolute}
+.flow li:not(:last-child){margin-right:34px;position:relative}
+.flow li:not(:last-child)::after{content:"";position:absolute;right:-30px;top:50%;width:26px;border-top:2px solid var(--accent)}
+.flow li:not(:last-child) span{position:absolute;right:-31px;top:calc(50% - 5px);width:8px;height:8px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:rotate(45deg)}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.about p{margin:0 0 16px;max-width:60ch}
+.facts{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.facts li{padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;font-size:15px}
+.facts b{font-weight:500;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+.skill h3{font-size:19px;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{background:var(--tag);padding:4px 12px;border-radius:999px;font-size:14px}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:30px;margin-bottom:24px}
+.project h3{font-size:clamp(22px,3vw,28px);margin-bottom:6px}
+.project .sub{color:var(--muted);margin:0 0 18px}
+.project ul.pts{margin:20px 0 0;padding-left:20px}
+.project ul.pts li{margin-bottom:8px;max-width:78ch}
+.edu{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:26px 30px}
+.edu h3{font-size:22px}.edu p{margin:6px 0 0;color:var(--muted)}
+.contact p{max-width:52ch;color:var(--muted);margin:0 0 24px}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.links a{display:block;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;text-decoration:none;overflow-wrap:anywhere}
+.links a:hover{border-color:var(--accent)}
+.links small{display:block;color:var(--muted);font-size:13px}
+footer{margin-top:90px;border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px}
+@media (max-width:760px){.about{grid-template-columns:1fr;gap:28px}nav{gap:14px;font-size:14px}.flow li:not(:last-child){margin-right:30px}}
+@media (max-width:520px){nav a:nth-child(n+4){display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+<a class="logo" href="#top">Rishwanth N</a>
+<nav aria-label="Main"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+<h1>Rishwanth N</h1>
+<p class="role">Full-stack developer · React, Node.js, MySQL</p>
+<p class="lede">I build end-to-end web applications, from database design and secure REST APIs to responsive React interfaces with login, roles and protected pages.</p>
+<div class="btns"><a class="btn primary" href="#projects">View projects</a><a class="btn" href="#contact">Get in touch</a></div>
+<div class="flow" aria-label="Typical request path in my applications">
+<p>How a request travels through the apps I build</p>
+<ol>
+<li>React<small>UI and state</small><span></span></li>
+<li>Axios<small>JWT interceptor</small><span></span></li>
+<li>Express<small>REST and MVC</small><span></span></li>
+<li>MySQL / MongoDB<small>Data and logs</small></li>
+</ol></div>
+</div></section>
+
+<section id="about"><div class="wrap">
+<h2>About</h2>
+<div class="about">
+<div>
+<p>I’m a full-stack developer based in Tiruppur, Tamil Nadu. I work with React.js, Node.js and Express.js, and I back my applications with MySQL and MongoDB.</p>
+<p>I design and develop complete platforms on my own: JWT authentication, role-based access control and REST API integration, from the database through to the responsive frontend.</p>
+</div>
+<ul class="facts">
+<li><b>Location</b><span>Tiruppur, Tamil Nadu</span></li>
+<li><b>Focus</b><span>Full-stack web development</span></li>
+<li><b>Main stack</b><span>React · Node.js · Express</span></li>
+<li><b>Education</b><span>B.Com PA, 2023–2026</span></li>
+</ul>
+</div></div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2>
+<div class="skills">
+<div class="skill"><h3>Frontend</h3><ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React.js</li><li>JSX</li><li>React Hooks</li><li>React Router</li><li>Bootstrap</li><li>Tailwind CSS</li></ul></div>
+<div class="skill"><h3>Backend</h3><ul class="tags"><li>Node.js</li><li>Express.js</li><li>REST APIs</li><li>MVC architecture</li></ul></div>
+<div class="skill"><h3>Databases</h3><ul class="tags"><li>MySQL</li><li>MongoDB</li></ul></div>
+<div class="skill"><h3>Authentication and security</h3><ul class="tags"><li>JWT authentication</li><li>Role-based access control</li><li>Protected routes</li><li>API authorization</li></ul></div>
+<div class="skill"><h3>Tools</h3><ul class="tags"><li>Git</li><li>GitHub</li><li>VS Code</li><li>Axios</li><li>Vite</li><li>npm</li><li>API testing</li></ul></div>
+<div class="skill"><h3>Concepts</h3><ul class="tags"><li>CRUD operations</li><li>API integration</li><li>Async/await</li><li>Promises</li><li>Error handling</li><li>State management</li></ul></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap">
+<h2>Projects</h2>
+<article class="project">
+<h3>E-Commerce Web Application</h3>
+<p class="sub">Full-stack store with separate Admin and Customer modules</p>
+<ul class="tags"><li>React.js</li><li>Node.js</li><li>Express.js</li><li>MySQL</li><li>MongoDB</li><li>Axios</li><li>JWT</li><li>Bootstrap</li></ul>
+<ul class="pts">
+<li>Implemented Admin and Customer authentication with JWT, role-based authorization and protected routes.</li>
+<li>Built an Admin dashboard to manage products and categories, with product CRUD and image upload.</li>
+<li>Built a Customer dashboard with product listing, profile and address management.</li>
+<li>Created REST APIs in Node.js and Express.js using an MVC backend structure.</li>
+<li>Used MySQL for application data and MongoDB for logging data. Axios interceptors attach the token and handle unauthorized responses automatically.</li>
+</ul>
+</article>
+<article class="project">
+<h3>Splitwise – Expense Management Application</h3>
+<p class="sub">Shared expense tracking between users, inspired by Splitwise</p>
+<ul class="tags"><li>React.js</li><li>JavaScript</li><li>Node.js</li><li>Express.js</li><li>MySQL</li><li>Axios</li></ul>
+<ul class="pts">
+<li>Developed CRUD operations for expense records and connected the React frontend to REST APIs with Axios.</li>
+<li>Built the backend with Node.js and Express.js, storing data in MySQL.</li>
+<li>Built reusable React components and managed application state with React Hooks.</li>
+</ul>
+</article>
+<a class="btn" href="https://github.com/rishwanthrishwanth14-sys" target="_blank" rel="noopener">More on GitHub</a>
+</div></section>
+
+<section id="education"><div class="wrap">
+<h2>Education</h2>
+<div class="edu"><h3>Bachelor of Commerce (B.Com PA)</h3><p>Hindusthan College of Arts and Science, Bharathiar University · 2023 – 2026</p></div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<h2>Contact</h2>
+<p>I’m open to full-stack and React developer opportunities. The quickest way to reach me is by email.</p>
+<div class="links">
+<a href="mailto:rishwanthrishwanth14@gmail.com"><small>Email</small>rishwanthrishwanth14@gmail.com</a>
+<a href="tel:+917639583280"><small>Phone</small>+91 76395 83280</a>
+<a href="https://linkedin.com/in/rishwanthnatrajan" target="_blank" rel="noopener"><small>LinkedIn</small>linkedin.com/in/rishwanthnatrajan</a>
+<a href="https://github.com/rishwanthrishwanth14-sys" target="_blank" rel="noopener"><small>GitHub</small>github.com/rishwanthrishwanth14-sys</a>
+</div></div></section>
+</main>
+<footer><div class="wrap">© 2026 Rishwanth N · Tiruppur, Tamil Nadu</div></footer>
+</body>
+</html>
